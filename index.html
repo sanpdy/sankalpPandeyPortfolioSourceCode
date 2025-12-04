@@ -54,6 +54,49 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+<tr onmouseout="radmesh_stop()" onmouseover="radmesh_start()" bgcolor="#ffffd0">
+  <td style="padding:16px;width:20%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='radmesh_image'>
+        <img src='images/radmesh_after.jpg' width=100%>
+      </div>
+      <img src='images/radmesh_before.jpg' width=100%>
+    </div>
+    <script type="text/javascript">
+      function radmesh_start() {
+        document.getElementById('radmesh_image').style.opacity = "1";
+      }
+
+      function radmesh_stop() {
+        document.getElementById('radmesh_image').style.opacity = "0";
+      }
+      radmesh_stop()
+    </script>
+  </td>
+  <td style="padding:8px;width:80%;vertical-align:middle">
+    <a href="https://half-potato.gitlab.io/rm/">
+      <span class="papertitle">Radiance Meshes for Volumetric Reconstruction</span>
+    </a>
+    <br>
+    <a href="https://half-potato.gitlab.io/">Alexander Mai</a>,
+    <a href="https://github.com/Shmaug">Trevor Hedstrom</a>,
+    <a href="https://grgkopanas.github.io/">George Kopanas</a>, <br>
+	<a href="https://mediatech.aalto.fi/~janne/index.php">Janne Kontkanen</a>, 
+    <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=253">Falko Kuester</a>,
+    <strong>Jonathan T. Barron</strong>
+    <br>
+    <em>arXiv</em>, 2025
+    <br>
+    <a href="https://half-potato.gitlab.io/rm/">project page</a>
+    /
+    <a href="https://arxiv.org/abs/2512.04076">arXiv</a>
+    <p></p>
+    <p>
+	Parameterizing a scene with a Delaunay tetrahedralization and a neural field yields a scene representation that is accurate, fast to render, easy to edit, and backwards-compatible.
+    </p>
+  </td>
+</tr>
+
 <tr onmouseout="nexf_stop()" onmouseover="nexf_start()">
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
