@@ -108,7 +108,7 @@ export const publications: ResearchPaper[] = [
     pdfLink: "",
     arxivLink: "",
     status: "Under Review",
-    conference: "CVPR 2026",
+    conference: "Undisclosed",
   },
     {
     id: 2,
@@ -127,7 +127,7 @@ export const publications: ResearchPaper[] = [
     pdfLink: "",
     arxivLink: "",
     status: "Under Review",
-    conference: "CVPR 2026",
+    conference: "Undisclosed",
   },
   {
     id: 3,
