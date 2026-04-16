@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Sankalp Pandey</title>
     <meta name="description" content="CV of Sankalp Pandey">
+    <script>
+      (function () {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const systemDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme = storedTheme || (systemDark ? "dark" : "light");
+          document.documentElement.dataset.theme = theme;
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +30,21 @@
   </head>
   <body class="bg-surface text-text font-serif antialiased print:bg-white">
     <header class="py-4 bg-surface">
-      <div class="max-w-4xl mx-auto px-6">
+      <div class="max-w-4xl mx-auto px-6 relative">
         <nav class="flex items-center justify-center">
           <ul class="flex items-center gap-6 text-sm font-sans">
             <li><a href="index.html" class="text-text-muted no-underline hover:text-text">Home</a></li>
             <li><a href="cv.html" class="text-text font-bold no-underline">CV</a></li>
           </ul>
         </nav>
+        <div class="theme-toggle-shell no-print">
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path data-theme-icon-path d="M21 12.79A9 9 0 0 1 11.21 3a7 7 0 1 0 9.79 9.79Z"></path>
+            </svg>
+            <span class="theme-toggle-label" data-theme-label>Dark mode</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -103,20 +125,6 @@ Supported by Distinguished Doctoral Fellowship (~$45,000/year total funding for 
 
         <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-4">
           <div class="flex-1">
-            <p class="font-semibold">QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery</p>
-            <p class="text-text-body text-sm">
-              <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a>, <strong>Sankalp Pandey</strong>,
-              <a href="https://bmcl.korea.ac.kr/people/">Suhyun Kim</a>, <a href="https://bmcl.korea.ac.kr/people/">Hojin Jang</a>,
-              <a href="https://uamshealth.com/provider/arabinda-k-choudhary/">Arabinda Kumar Choudhary</a>,
-              <a href="https://engineering.uark.edu/directory/profile/uid/khoaluu/name/Khoa+Luu/">Khoa Luu</a>
-            </p>
-            <p class="text-text-muted text-sm">A physics-aware instruction-tuning pipeline that improves multimodal reasoning for quantum material discovery.</p>
-          </div>
-          <div class="text-text-muted text-sm md:text-right flex-shrink-0">CVPR Findings, 2026</div>
-        </div>
-
-        <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-4">
-          <div class="flex-1">
             <p class="font-semibold">TIMBRE: Time-aware Multimodal Vision-Brain Encoding</p>
             <p class="text-text-body text-sm">
               <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a>, <strong>Sankalp Pandey</strong>,
@@ -127,6 +135,20 @@ Supported by Distinguished Doctoral Fellowship (~$45,000/year total funding for 
             <p class="text-text-muted text-sm">A time-aware multimodal framework that models temporal neural dynamics to improve vision-brain encoding.</p>
           </div>
           <div class="text-text-muted text-sm md:text-right flex-shrink-0">Under review, 2026</div>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-4">
+          <div class="flex-1">
+            <p class="font-semibold">QuPAINT: Physics-Aware Instruction Tuning Approach to Quantum Material Discovery</p>
+            <p class="text-text-body text-sm">
+              <a href="https://ngxbac.github.io/">Xuan-Bac Nguyen</a>, <strong>Sankalp Pandey</strong>,
+              <a href="https://bmcl.korea.ac.kr/people/">Suhyun Kim</a>, <a href="https://bmcl.korea.ac.kr/people/">Hojin Jang</a>,
+              <a href="https://uamshealth.com/provider/arabinda-k-choudhary/">Arabinda Kumar Choudhary</a>,
+              <a href="https://engineering.uark.edu/directory/profile/uid/khoaluu/name/Khoa+Luu/">Khoa Luu</a>
+            </p>
+            <p class="text-text-muted text-sm">A physics-aware instruction-tuning pipeline that improves multimodal reasoning for quantum material discovery.</p>
+          </div>
+          <div class="text-text-muted text-sm md:text-right flex-shrink-0">CVPR Findings, 2026</div>
         </div>
 
         <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-4">
@@ -193,5 +215,6 @@ Supported by Distinguished Doctoral Fellowship (~$45,000/year total funding for 
       </section>
 
     </main>
+    <script src="theme-toggle.js"></script>
   </body>
 </html>

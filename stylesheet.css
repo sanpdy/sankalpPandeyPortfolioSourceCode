@@ -16,6 +16,22 @@
   --font-sans: "Source Sans 3", system-ui, sans-serif;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-surface: #111315;
+  --color-surface-alt: #171a1d;
+  --color-surface-muted: #14171a;
+  --color-text: #f5f5f4;
+  --color-text-body: #d4d4d2;
+  --color-text-muted: #a3a3a3;
+  --color-text-subtle: #737373;
+  --color-border: #2b3035;
+  --color-border-subtle: #202428;
+  --color-link: #d4d4d2;
+  --color-link-hover: #ffffff;
+  --color-link-underline: #4b5563;
+}
+
 html {
   font-family: var(--font-serif);
   font-size: 18px;
@@ -27,6 +43,7 @@ body {
   background-color: var(--color-surface);
   color: var(--color-text);
   font-family: var(--font-serif);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .font-display {
@@ -92,6 +109,46 @@ a:hover {
 
 .pub-border {
   border-top: 1px solid var(--color-border);
+}
+
+.theme-toggle-shell {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  line-height: 1;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-subtle);
+}
+
+.theme-toggle-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+  flex: none;
+}
+
+.theme-toggle-label {
+  display: none;
 }
 
 .highlights-grid {
@@ -219,6 +276,14 @@ a:hover {
   gap: 1rem;
 }
 
+header,
+.highlight-card,
+.highlight-media,
+.publication-thumb,
+.updates-item {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -246,6 +311,17 @@ a:hover {
 @media (min-width: 1024px) {
   .highlights-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-toggle-shell {
+    left: 1rem;
+  }
+
+  .theme-toggle {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 }
 
